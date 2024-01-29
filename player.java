@@ -1,15 +1,18 @@
 import java.util.ArrayList;
 
-public class player {
+public class Player {
     private ArrayList <String> inventory;
-    private int row, colm; 
+    private int row, colm, score; 
 
 
-    public player (int row, int column) {
+    public Player (int row, int column) {
         this.inventory = new ArrayList<>();
         this.row = row;
         this.colm = column;
+        this.score = 0; 
     }
+    
+     // Returns the row and column of the player within the escape-room grid
 
     public int row(){
         return row;
@@ -18,6 +21,8 @@ public class player {
     public int column(){
         return colm;
     }
+
+    // Allows for the user to add the picked up item to their inventory
 
     public void pickUpItem(String item){
         inventory.add(item);
@@ -29,6 +34,8 @@ public class player {
         }
     }
 
+    //Allows for the user to use the selected item in their inventory but also checks whether they contain the item.
+
     public void useItem(String object){
         if (inventory.contains(object)) {
             System.out.println("You used:" + object);
@@ -38,5 +45,12 @@ public class player {
         }
     }
 
+    public int getScore(){
+        return score;
+    }
+
+    public void updateScore(){
+        score++;
+    }
 
 }
