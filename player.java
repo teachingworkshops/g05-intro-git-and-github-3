@@ -2,22 +2,22 @@ import java.util.ArrayList;
 
 public class Player {
     private ArrayList <String> inventory;
-    private int row, colm, score; 
+    private Point point;
+    private int score; 
 
 
-    public Player (int row, int column) {
+    public Player (Point p) {
         this.inventory = new ArrayList<>();
-        this.row = row;
-        this.colm = column;
+        this.point = p;
         this.score = 0; 
     }
-    
-    public int row(){
-        return row;
+
+    public Point getPosition(){
+        return point;
     }
 
-    public int column(){
-        return colm;
+    public void movePosition(int row, int col){
+        point = new Point(row, col);
     }
 
     // Allows for the user to add the picked up item to their inventory
