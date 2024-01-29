@@ -12,8 +12,6 @@ public class Player {
         this.score = 0; 
     }
     
-     // Returns the row and column of the player within the escape-room grid
-
     public int row(){
         return row;
     }
