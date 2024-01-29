@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class escapeRoom {
+public class EscapeRoom {
     private boolean win;
     private Player player;
 
     private Point startPosition = new Point(0, 0);
 
-    public escapeRoom(){
+    public EscapeRoom(){
         this.player = new Player(startPosition);
         this.win = false;
     }
