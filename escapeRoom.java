@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class escapeRoom {
-    
-    private List<String> puzzles;
     private boolean win;
     private Player player;
 
@@ -12,7 +10,6 @@ public class escapeRoom {
     public escapeRoom(){
         this.player = new Player(startPosition);
         this.win = false;
-        this.puzzles = new ArrayList<String>();
     }
 
     public void movePlayer(String move){
@@ -33,10 +30,6 @@ public class escapeRoom {
             int newRow = player.getPosition().getRow() - 1;
             player.movePosition(newRow, player.getPosition().getColumn());
         } 
-    }
-    
-    public void solvePuzzle(){
-        
     }
 
     public void exitConsolInteract(){
