@@ -1,9 +1,29 @@
 
 public class EscapeRoom {
 
+    private int[][] room = new int[4][4];
+
     public EscapeRoom(){
-        
+        initializeMatrix();
     }
+
+    /*
+     *
+     *            col
+     *         0  1  2  3
+     *      0 [0][0][8][0]
+     *  row 1 [4][0][0][0]
+     *      2 [0][1][0][9]
+     *      3 [6][0][0][-1]
+     * 
+     * room[1][0]=4 is key digit 1 ("1-4")
+     * room[0][2]=8 is key digit 2 ("2-8")
+     * room[2][3]=9 is key digit 3 ("3-9")
+     * room[3][0]=6 is key digit 4 ("4-6")
+     * room[3][3]=-1 is door
+     * 
+     * player starting position is room[2][1]
+     */
 
     public void initializeMatrix(){
         
