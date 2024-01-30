@@ -11,10 +11,18 @@ public class Point {
         return row;
     }
 
+    public void setRow(int row){
+        this.row = row;
+    }
+
     public int getColumn(){
         return col;
     }
 
+    public void setColumn(int column){
+        this.col = column;
+    }
+    
     
 }
 

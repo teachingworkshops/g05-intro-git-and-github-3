@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 
 public class Player {
+
     private ArrayList <String> inventory;
+    private Point position = new Point(2, 1);
 
     public Player () {
 
@@ -17,4 +19,12 @@ public class Player {
         }
     }
 
+    public Point getPosition(){
+        return this.position;
+    }
+
+    public void setPosition(int row, int col){
+        this.position.setRow(row);
+        this.position.setColumn(col);
+    }
 }
