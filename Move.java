@@ -4,7 +4,7 @@ public class Move {
         if (row == 0) {
             System.out.println("You hit a wall, you can't move there.");  
         } else {
-            player.setPosition(row--, col);
+            player.setPosition(row-1, col);
         }
     }
     
@@ -12,7 +12,7 @@ public class Move {
         if (row == 3) {
             System.out.println("You hit a wall, you can't move there.");
         } else {
-            player.setPosition(row++, col);   
+            player.setPosition(row+1, col);   
         }
     }
     
@@ -20,7 +20,7 @@ public class Move {
         if (col == 0) {
             System.out.println("You hit a wall, you can't move there.");
         } else {
-            player.setPosition(row, col--);
+            player.setPosition(row, col-1);
         }
     }
 
@@ -28,7 +28,7 @@ public class Move {
         if (col == 3) {
             System.out.println("You hit a wall, you can't move there.");
         } else {
-            player.setPosition(row, col++);
+            player.setPosition(row, col+1);
         }
 }
 }
