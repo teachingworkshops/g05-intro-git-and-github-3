@@ -1,4 +1,4 @@
-public class move {
+public class Move {
 
     public static void moveUp(int[][] position, int row, int col){
         if (row == 0) {
