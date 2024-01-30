@@ -7,6 +7,10 @@ public class EscapeRoom {
         initializeMatrix();
     }
 
+    public int[][] getRoom(){
+        return room;
+    }
+
     /*
      *
      *            col
@@ -27,6 +31,19 @@ public class EscapeRoom {
 
     public void initializeMatrix(){
         
+        for(int i=0; i<room.length; i++){
+            for(int j=0; j<room[0].length; j++){
+                room[i][j] = 0;
+            }
+        }
+
+        // adding the keys and the door at their locations on the grid
+        room[1][0]=4;
+        room[0][2]=8;
+        room[2][3]=9;
+        room[3][0]=6;
+        room[3][3]=-1;
+
     }
 
     /* room check method to check which room the player is in. I went off the idea that the 
