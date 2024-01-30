@@ -12,7 +12,7 @@ public class Player {
     
     //method that must be called by EscapeRoom roomCheck() if player finds a key
     //adds a string to the arraylist inventory 
-    public void updateInventory(){
+    public void updateInventory(String key){
 
     }
 
