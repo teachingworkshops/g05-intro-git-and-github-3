@@ -9,8 +9,8 @@ public class Player {
 
     }
     
-    public void updateInventory(){
-
+    public void updateInventory(String codeSeg){
+        inventory.add(codeSeg);
     }
 
     public void printInventory(){
