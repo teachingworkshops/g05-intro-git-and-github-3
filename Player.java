@@ -8,6 +8,7 @@ public class Player {
 
     //basic player constructor
     public Player(){
+        this.inventory = new ArrayList<String>();
     }
     
     //method that must be called by EscapeRoom roomCheck() if player finds a key
@@ -22,6 +23,7 @@ public class Player {
         for (String item : inventory){
             System.out.println(item);
         }
+        System.out.println("\n");
     }
 
     //method for accessing player's current position throughout other classes useful for roomCheck()
