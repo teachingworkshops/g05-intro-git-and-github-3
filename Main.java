@@ -59,7 +59,7 @@ public class Main {
                 player.printInventory();
             }
             else {
-                System.out.println("I don't understand that input. Please use the keywords 'up', 'down', 'left', 'right'");
+                System.out.println("I don't understand that input. Please use the keywords 'up', 'down', 'left', 'right' to move or 'i' for inventory.");
             }
 
             if (player.getPosition().getRow() == 3 && player.getPosition().getColumn() == 3){
