@@ -7,6 +7,7 @@ public class Main {
         EscapeRoom EscapeRoom = new EscapeRoom();
         Player player = new Player();
         boolean win = false;
+        int prevRow, prevCol;
 
         System.out.println("Welcome to the Escape room. I am your personal guide!\nNavigate through different rooms using the keywords 'up', 'down', 'left', 'right'\nEnter 'i' to view your inventory.\n\nYou are in a very dark room with limited visibility, not much to see in here right now.");
 
@@ -16,9 +17,13 @@ public class Main {
             String in = input.nextLine();
             
             if(in.contains("up")){
-     
+                prevRow = player.getPosition().getRow();
+
                 Move.moveUp(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
-                EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
+
+                if (prevRow != player.getPosition().getRow()) {
+                    EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
+                }
 
                 // Need to implement something similar to this so it doesnt print 2 things, you hit wall and room is empty
                 // for some reason key with val 6 and door cannot be found when you put this if statement
@@ -29,16 +34,31 @@ public class Main {
             }
 
             else if(in.contains("down")){
+                prevRow = player.getPosition().getRow();
+
                 Move.moveDown(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
-                EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
+
+                if (prevRow != player.getPosition().getRow()) {
+                    EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
+                }
             }
             else if(in.contains("left")){
+                prevCol = player.getPosition().getColumn();
+
                 Move.moveLeft(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
-                EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
+                
+                if (prevCol != player.getPosition().getColumn()) {
+                    EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
+                }
             }
             else if(in.contains("right")){
+                prevCol = player.getPosition().getColumn();
+
                 Move.moveRight(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
-                EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
+                
+                if (prevCol != player.getPosition().getColumn()) {
+                    EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
+                }
             }
             else if(in.equals("i") || in.equals("I")){
                 player.printInventory();
