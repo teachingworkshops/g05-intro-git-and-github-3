@@ -3,9 +3,13 @@ public class EscapeRoom {
 
     private int[][] room = new int[4][4];
 
+    // method to call initializeMatrix to create the matrix.
+
     public EscapeRoom(){
         initializeMatrix();
     }
+
+    // getter method to return the escape room
 
     public int[][] getRoom(){
         return room;
@@ -46,9 +50,8 @@ public class EscapeRoom {
 
     }
 
-    /* room check method to check which room the player is in. I went off the idea that the 
-        values of the gid are stored in the gid directly and have the method check the 
-        position for the value and then inform the player and add it to the "inventory"
+    /*Method made to check the section of the room that player is in. 
+    * Check whether the room contains a code segment, contains the keypad or is empty. 
     */
 
     public void roomCheck(int[][] room, Player player){
