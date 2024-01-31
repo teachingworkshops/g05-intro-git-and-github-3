@@ -54,7 +54,7 @@ public class EscapeRoom {
     public void roomCheck(int[][] room, Player player){
         int val = room[player.getPosition().getRow()][player.getPosition().getColumn()];
 
-        if(val != 1 && val != 0 && val != -1){
+        if(val != 0 && val != -1){
 
             if (val == 4) {
                 player.updateInventory("1-4");
