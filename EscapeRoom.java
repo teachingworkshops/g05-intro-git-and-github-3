@@ -81,7 +81,7 @@ public class EscapeRoom {
             System.out.println("You found the key pad to exit the room.");
 
         } else {
-            System.out.println("This part of the room is empty, keep looking!");
+            System.out.println("Nothing to see in this part of the room, keep looking!");
         }
     }
 }

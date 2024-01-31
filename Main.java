@@ -9,7 +9,7 @@ public class Main {
         boolean win = false;
         int prevRow, prevCol;
 
-        System.out.println("Welcome to the Escape room. I am your personal guide!\nNavigate through different rooms using the keywords 'up', 'down', 'left', 'right'\nEnter 'i' to view your inventory.\n\nYou are in a very dark room with limited visibility, not much to see in here right now.");
+        System.out.println("\n\nWelcome to the Escape room. Find codes and door to escape.\nNavigate through different rooms using the keywords 'up', 'down', 'left', 'right'\nEnter 'i' to view your inventory.\n\nYou are in a very dark room with limited visibility, not much to see in here right now.");
 
         while(win==false){
             
