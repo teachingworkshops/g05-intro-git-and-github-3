@@ -42,7 +42,7 @@ public class EscapeRoom {
         room[0][2]=8;
         room[2][3]=9;
         room[3][0]=6;
-        room[3][3]=-1;
+        room[3][3]= -1;
 
     }
 
@@ -54,7 +54,7 @@ public class EscapeRoom {
     public void roomCheck(int[][] room, Player player){
         int val = room[player.getPosition().getRow()][player.getPosition().getColumn()];
 
-        if(val != 1 || val != 0 || val != -1){
+        if(val != 1 && val != 0 && val != -1){
 
             if (val == 4) {
                 player.updateInventory("1-4");
@@ -75,7 +75,7 @@ public class EscapeRoom {
             }
 
         } else if (val == -1) {
-            System.out.println("You found the key pad to exit the room");
+            System.out.println("You found the key pad to exit the room.");
 
         } else {
             System.out.println("This part of the room is empty, keep looking!");
