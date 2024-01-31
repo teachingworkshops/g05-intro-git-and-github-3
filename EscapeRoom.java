@@ -59,15 +59,19 @@ public class EscapeRoom {
             if (val == 4) {
                 player.updateInventory("1-4");
                 System.out.println("You found part of the code: 1-4" );
+                room[1][0] = 0;
             } else if (val == 8) {
                 player.updateInventory("2-8");
                 System.out.println("You found part of the code: 2-8" );
+                room[0][2] = 0;
             } else if (val == 9) {
                 player.updateInventory("3-9");
                 System.out.println("You found part of the code: 3-9" );
+                room[2][3] = 0;
             } else if (val == 6){
                 player.updateInventory("4-6");
-                System.out.println("You found part of the code: 4-6" );;
+                System.out.println("You found part of the code: 4-6" );
+                room[3][0] = 0;
             }
 
         } else if (val == -1) {
