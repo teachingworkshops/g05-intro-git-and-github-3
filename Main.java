@@ -25,11 +25,6 @@ public class Main {
                     EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
                 }
 
-                // Need to implement something similar to this so it doesnt print 2 things, you hit wall and room is empty
-                // for some reason key with val 6 and door cannot be found when you put this if statement
-                // if (player.getPosition.getRow != 0){
-                //     EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
-                // }
                 
             }
 
