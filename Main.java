@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         EscapeRoom EscapeRoom = new EscapeRoom();
@@ -9,7 +10,7 @@ public class Main {
         boolean win = false;
         int prevRow, prevCol;
 
-        System.out.println("\n\nWelcome to the Escape room. Find codes and door to escape.\nNavigate through different rooms using the keywords 'up', 'down', 'left', 'right'\nEnter 'i' to view your inventory.\n\nYou are in a very dark room with limited visibility, not much to see in here right now.");
+        System.out.println("\n\nWelcome to the Escape room. Find the 4 code segments and the door to escape.\nNavigate through different sections of the escape room using the keywords 'up', 'down', 'left', 'right'\nEnter 'i' to view your inventory.\n\nYou are in a very dark room with limited visibility, not much to see in here right now.");
 
         while(win==false){
             

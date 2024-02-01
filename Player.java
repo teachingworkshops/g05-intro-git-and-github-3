@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Player {
 
     private ArrayList <String> inventory;
-    //sets players intial starting position to 2,1
+    //sets players initial starting position to 2,1
     private Point position = new Point(2, 1);
 
     //basic player constructor

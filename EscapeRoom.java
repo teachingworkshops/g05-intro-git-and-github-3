@@ -3,7 +3,7 @@ public class EscapeRoom {
 
     private int[][] room = new int[4][4];
 
-    // method to call initializeMatrix to create the matrix.
+    // Constructor to call initializeMatrix to create the matrix.
 
     public EscapeRoom(){
         initializeMatrix();
@@ -31,6 +31,8 @@ public class EscapeRoom {
      * room[3][3]=-1 is door
      * 
      * player starting position is room[2][1]
+     * 
+     * Method to initialize the matrix and place all keys and the door
      */
 
     public void initializeMatrix(){
