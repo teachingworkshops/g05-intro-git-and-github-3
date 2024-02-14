@@ -20,42 +20,20 @@ public class Main {
             
             if(in.contains("up")){
                 prevRow = player.getPosition().getRow();
-
                 Move.moveUp(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
-
-                if (prevRow != player.getPosition().getRow()) {
-                    EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
-                }
-
-                
             }
 
             else if(in.contains("down")){
                 prevRow = player.getPosition().getRow();
-
                 Move.moveDown(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
-
-                if (prevRow != player.getPosition().getRow()) {
-                    EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
-                }
             }
             else if(in.contains("left")){
                 prevCol = player.getPosition().getColumn();
-
                 Move.moveLeft(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
-                
-                if (prevCol != player.getPosition().getColumn()) {
-                    EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
-                }
             }
             else if(in.contains("right")){
                 prevCol = player.getPosition().getColumn();
-
                 Move.moveRight(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
-                
-                if (prevCol != player.getPosition().getColumn()) {
-                    EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
-                }
             }
             else if(in.equals("i") || in.equals("I")){
                 player.printInventory();
@@ -72,6 +50,9 @@ public class Main {
              System.out.println(  ) ;
              System.out.println( (Arrays.deepToString(newGameMap)).replace("], ", "\n").replace("[", "").replace("[[", "").replace("]]", "").replace(",", "  ")) ;
              System.out.println(  ) ;
+            }
+            else if(in.equalsIgnoreCase( "search" )) {
+                searchCommand(EscapeRoom, player);
             }
             else {
                 System.out.println("I don't understand that input. Please use the keywords 'up', 'down', 'left', 'right' to move, 'i' for inventory, or 'map' to open the map.");
@@ -108,5 +89,14 @@ public class Main {
         }
         System.out.println("You have escaped! Welcome to safety.");
         input.close();
+    }
+
+    /**
+     * Checks if a room has an item
+     * @param EscapeRoom escape room object to check the room in
+     * @param player player whos inventory will be updated
+     */
+    private static void searchCommand(final EscapeRoom EscapeRoom, final Player player){
+        EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
     }
 }
