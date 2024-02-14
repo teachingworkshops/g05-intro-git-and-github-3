@@ -1,3 +1,4 @@
+import java.util.Arrays ;
 import java.util.Scanner;
 
 public class Main {
@@ -14,7 +15,7 @@ public class Main {
 
         while(win==false){
             
-            System.out.println("Enter your move(up/down/left/right):\n ");
+            System.out.println("Enter your move(up/down/left/right), open the map(map), or open your inventory(i):\n ");
             String in = input.nextLine();
             
             if(in.contains("up")){
@@ -59,8 +60,21 @@ public class Main {
             else if(in.equals("i") || in.equals("I")){
                 player.printInventory();
             }
+            else if(in.equalsIgnoreCase( "map" )) {
+            int[][] originalGameMap = EscapeRoom.getRoom(); 
+            
+            String[][] newGameMap = new String[originalGameMap.length][originalGameMap[0].length];
+
+             for (String[] row : newGameMap) {
+                 Arrays.fill(row, "-");
+                 }
+             newGameMap[player.getPosition().getRow()][player.getPosition().getColumn()] = "P";
+             System.out.println(  ) ;
+             System.out.println( (Arrays.deepToString(newGameMap)).replace("], ", "\n").replace("[", "").replace("[[", "").replace("]]", "").replace(",", "  ")) ;
+             System.out.println(  ) ;
+            }
             else {
-                System.out.println("I don't understand that input. Please use the keywords 'up', 'down', 'left', 'right' to move or 'i' for inventory.");
+                System.out.println("I don't understand that input. Please use the keywords 'up', 'down', 'left', 'right' to move, 'i' for inventory, or 'map' to open the map.");
             }
 
             if (player.getPosition().getRow() == 3 && player.getPosition().getColumn() == 3){
