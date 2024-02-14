@@ -61,16 +61,16 @@ public class Main {
                 player.printInventory();
             }
             else if(in.equalsIgnoreCase( "map" )) {
-            int[][] originalIntArray = EscapeRoom.getRoom(); 
+            int[][] originalGameMap = EscapeRoom.getRoom(); 
             
-            String[][] myInt = new String[originalIntArray.length][originalIntArray[0].length];
+            String[][] newGameMap = new String[originalGameMap.length][originalGameMap[0].length];
 
-             for (String[] row : myInt) {
+             for (String[] row : newGameMap) {
                  Arrays.fill(row, "-");
                  }
-             myInt[player.getPosition().getRow()][player.getPosition().getColumn()] = "P";
+             newGameMap[player.getPosition().getRow()][player.getPosition().getColumn()] = "P";
              System.out.println(  ) ;
-             System.out.println( (Arrays.deepToString(myInt)).replace("], ", "\n").replace("[", "").replace("[[", "").replace("]]", "").replace(",", "  ")) ;
+             System.out.println( (Arrays.deepToString(newGameMap)).replace("], ", "\n").replace("[", "").replace("[[", "").replace("]]", "").replace(",", "  ")) ;
              System.out.println(  ) ;
             }
             else {
