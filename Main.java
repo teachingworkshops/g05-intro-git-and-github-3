@@ -9,30 +9,25 @@ public class Main {
         EscapeRoom EscapeRoom = new EscapeRoom();
         Player player = new Player();
         boolean win = false;
-        int prevRow, prevCol;
 
         System.out.println("\n\nWelcome to the Escape room. Find the 4 code segments and the door to escape.\nNavigate through different sections of the escape room using the keywords 'up', 'down', 'left', 'right'\nEnter 'i' to view your inventory.\n\nYou are in a very dark room with limited visibility, not much to see in here right now.");
 
         while(win==false){
             
-            System.out.println("Enter your move(up/down/left/right), open the map(map), or open your inventory(i):\n ");
+            displayInstructions();
             String in = input.nextLine();
             
             if(in.contains("up")){
-                prevRow = player.getPosition().getRow();
                 Move.moveUp(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
             }
 
             else if(in.contains("down")){
-                prevRow = player.getPosition().getRow();
                 Move.moveDown(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
             }
             else if(in.contains("left")){
-                prevCol = player.getPosition().getColumn();
                 Move.moveLeft(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
             }
             else if(in.contains("right")){
-                prevCol = player.getPosition().getColumn();
                 Move.moveRight(EscapeRoom.getRoom(), player, player.getPosition().getRow(), player.getPosition().getColumn());
             }
             else if(in.equals("i") || in.equals("I")){
@@ -55,7 +50,7 @@ public class Main {
                 searchCommand(EscapeRoom, player);
             }
             else {
-                System.out.println("I don't understand that input. Please use the keywords 'up', 'down', 'left', 'right' to move, 'i' for inventory, or 'map' to open the map.");
+                System.out.println("I don't understand that input.");
             }
 
             if (player.getPosition().getRow() == 3 && player.getPosition().getColumn() == 3){
@@ -99,4 +94,21 @@ public class Main {
     private static void searchCommand(final EscapeRoom EscapeRoom, final Player player){
         EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
     }
+
+    private static void displayInstructions(){
+        String instructions = 
+            """
+
+            Options:
+                Move(up/down/left/right)
+                Open the map(map)
+                Open your inventory(i)
+                Search the room(search)
+
+            Enter your action:""";      
+            System.out.println(instructions);  
+    }
+
+
+
 }
