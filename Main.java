@@ -12,7 +12,6 @@ public class Main {
         int prevRow, prevCol;
 
         System.out.println("\n\nWelcome to the Escape room. Find the 4 code segments and the door to escape.\nNavigate through different sections of the escape room using the keywords 'up', 'down', 'left', 'right'\nEnter 'i' to view your inventory.\n\nYou are in a very dark room with limited visibility, not much to see in here right now.");
-
         while(win==false){
             
             System.out.println("Enter your move(up/down/left/right), open the map(map), or open your inventory(i):\n ");
@@ -92,7 +91,7 @@ public class Main {
                     try {
                         int code = Integer.parseInt(inputStr);
                 
-                        if (code == 4896){
+                        if ((code + "").equals(EscapeRoom.getKey())){
                             win = true;
                             break;
                         } else {
