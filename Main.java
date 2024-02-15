@@ -95,6 +95,9 @@ public class Main {
         EscapeRoom.roomCheck(EscapeRoom.getRoom(), player);
     }
 
+    /**
+     * Displays instructions for the player
+     */
     private static void displayInstructions(){
         String instructions = 
             """
